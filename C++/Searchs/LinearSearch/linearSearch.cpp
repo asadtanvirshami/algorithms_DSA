@@ -1,25 +1,21 @@
-#include <iostream>
+#include<iostream>
 
-int linearSearch(int arr[], int size, int target) {
-    for (int i = 0; i < size; ++i) {
-        if (arr[i] == target) {
-            return i;  // Return the index if the target is found
-        }
-    }
-    return -1;  // Return -1 if the target is not found
-}
+using namespace std;
 
-int main() {
-    int arr[] = {3, 1, 4, 2, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int target = 4;
+ int  linearSearch(int arr[], int size, int target){
+ 	for(int i = 0; i < size; i++)
+ 		if(arr[i] == target)
+ 			return i;
+		return -1;
 
-    int index = linearSearch(arr, size, target);
-    if (index != -1) {
-        std::cout << "Element found at index " << index << std::endl;
-    } else {
-        std::cout << "Element not found" << std::endl;
-    }
+ }
+ 
+ int main(){
+ 	int data[] = {-5,2,10,4,6};
+ 	int size = sizeof(data)/sizeof(data[0]);
+ 	int target = 10;
+ 	int result = linearSearch(data,size,target);
+ 	
+	(result == -1) ? cout << "Element not found" : cout << "Element found at index: " << result;
 
-    return 0;
-}
+ }
